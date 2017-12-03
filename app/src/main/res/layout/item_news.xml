@@ -1,60 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="16dp"
+    app:cardElevation="4dp">
 
-    <ImageView
-        android:id="@+id/iv_publication_logo"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:src="@drawable/img_dummy_publication"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_publication_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Eleven Midea"
-        android:layout_toRightOf="@id/iv_publication_logo"
-        android:textColor="@color/primary_text"
-        android:textSize="16sp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        />
+        <ImageView
+            android:id="@+id/iv_publication_logo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img_dummy_publication"
+            />
 
-    <TextView
-        android:id="@+id/tv_posted_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Posted At : Jan 01 - 6:30AM"
-        android:layout_alignLeft="@id/tv_publication_title"
-        android:layout_below="@id/tv_publication_title"
-        android:layout_marginTop="4dp"
-        android:textColor="@color/secondary_text"
-        android:textSize="14sp"
-        />
+        <TextView
+            android:id="@+id/tv_publication_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eleven Midea"
+            android:layout_toRightOf="@id/iv_publication_logo"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            />
 
-    <TextView
-        android:id="@+id/tv_news_brief"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="၂၀၁၈ ကမ္ဘာ့ဖလား အုပ်စုများ ဖီဖာ ကမ္ဘာ့ဖလားပြိုင်ပွဲရဲ့ အုပ်စုအဆင့်ပွဲစဉ်တွေကို မဲနှိုုက်အပြီးမှာတော့ ဘယ်ဂျီယံနဲ့ အင်္ဂလန်က အုပ်စု G မှာ အတူကျရောက်ပြီး ယူရိုချန်ပီယံ ပေါ်တူဂီ က စပိန်နဲ့ အုပ်စု B မှာ ဆုံတွေ့မှာ ဖြစ်ပါတယ်။ အိမ်ရှင် ရုရှားအသင်းက အုပ်စု A မှာ အီဂျစ်၊ ဥရုဂွေး၊ ဆော်ဒီအာရေဗျတို့နဲ့ ကစားရမှာ ဖြစ်လို့ နောက်တစ်ဆင့်တက်ဖို့ အခွင့် အရေး..."
-        android:layout_below="@id/iv_publication_logo"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:textColor="@color/primary_text"
-        android:textSize="14sp"
-        android:lineSpacingMultiplier="1.3"
-        android:maxLines="4"
-        android:ellipsize="end"
-        />
+        <TextView
+            android:id="@+id/tv_posted_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posted At : Jan 01 - 6:30AM"
+            android:layout_alignLeft="@id/tv_publication_title"
+            android:layout_below="@id/tv_publication_title"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/secondary_text"
+            android:textSize="14sp"
+            />
 
-    <ImageView
-        android:id="@+id/iv_news"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/img_dummy_news"
-        android:layout_below="@id/tv_news_brief"
-        />
+        <ImageView
+            android:id="@+id/iv_favourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_favorite_border_black_36dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:tint="@color/primary"
+            />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tv_news_brief"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="၂၀၁၈ ကမ္ဘာ့ဖလား အုပ်စုများ ဖီဖာ ကမ္ဘာ့ဖလားပြိုင်ပွဲရဲ့ အုပ်စုအဆင့်ပွဲစဉ်တွေကို မဲနှိုုက်အပြီးမှာတော့ ဘယ်ဂျီယံနဲ့ အင်္ဂလန်က အုပ်စု G မှာ အတူကျရောက်ပြီး ယူရိုချန်ပီယံ ပေါ်တူဂီ က စပိန်နဲ့ အုပ်စု B မှာ ဆုံတွေ့မှာ ဖြစ်ပါတယ်။ အိမ်ရှင် ရုရှားအသင်းက အုပ်စု A မှာ အီဂျစ်၊ ဥရုဂွေး၊ ဆော်ဒီအာရေဗျတို့နဲ့ ကစားရမှာ ဖြစ်လို့ နောက်တစ်ဆင့်တက်ဖို့ အခွင့် အရေး..."
+            android:layout_below="@id/iv_publication_logo"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/primary_text"
+            android:textSize="14sp"
+            android:lineSpacingMultiplier="1.3"
+            android:maxLines="4"
+            android:ellipsize="end"
+            />
+
+        <ImageView
+            android:id="@+id/iv_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_dummy_news"
+            android:layout_below="@id/tv_news_brief"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_action_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3 Likes - 3 Comments - Sent to 6 people"
+            android:layout_below="@id/iv_news"
+            android:textColor="@color/primary"
+            android:layout_marginLeft="8dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_user_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/tv_action_result"
+            android:weightSum="2"
+            android:layout_marginTop="8dp"
+            >
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                >
+
+                <TextView
+                    android:id="@+id/btn_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Comment"
+                    android:drawableLeft="@drawable/ic_chat_bubble_outline_black_24dp"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/primary"
+                    android:drawableTint="@color/primary"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                >
+
+                <TextView
+                    android:id="@+id/btn_send_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Send To"
+                    android:drawableLeft="@drawable/ic_send_black_24dp"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/primary"
+                    android:drawableTint="@color/primary"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
