@@ -57,7 +57,7 @@
             android:id="@+id/tv_news_brief"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="၂၀၁၈ ကမ္ဘာ့ဖလား အုပ်စုများ ဖီဖာ ကမ္ဘာ့ဖလားပြိုင်ပွဲရဲ့ အုပ်စုအဆင့်ပွဲစဉ်တွေကို မဲနှိုုက်အပြီးမှာတော့ ဘယ်ဂျီယံနဲ့ အင်္ဂလန်က အုပ်စု G မှာ အတူကျရောက်ပြီး ယူရိုချန်ပီယံ ပေါ်တူဂီ က စပိန်နဲ့ အုပ်စု B မှာ ဆုံတွေ့မှာ ဖြစ်ပါတယ်။ အိမ်ရှင် ရုရှားအသင်းက အုပ်စု A မှာ အီဂျစ်၊ ဥရုဂွေး၊ ဆော်ဒီအာရေဗျတို့နဲ့ ကစားရမှာ ဖြစ်လို့ နောက်တစ်ဆင့်တက်ဖို့ အခွင့် အရေး..."
+            android:text="@string/dummy_news_details"
             android:layout_below="@id/iv_publication_logo"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"

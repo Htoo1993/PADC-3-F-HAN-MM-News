@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         rvNews.setLayoutManager(linearLayoutManager);
+
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
+//        rvNews.setLayoutManager(gridLayoutManager);
 
         rvNews.setAdapter(mNewsAdapter);
 
