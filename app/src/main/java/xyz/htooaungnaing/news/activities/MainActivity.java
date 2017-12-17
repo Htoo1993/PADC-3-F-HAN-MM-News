@@ -1,5 +1,6 @@
 package xyz.htooaungnaing.news.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,8 +18,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import xyz.htooaungnaing.news.R;
 import xyz.htooaungnaing.news.adapters.NewsAdapter;
+import xyz.htooaungnaing.news.delegates.NewsActionDelegate;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NewsActionDelegate{
 
     @BindView(R.id.rv_news)
     RecyclerView rvNews;
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        mNewsAdapter = new NewsAdapter();
+        mNewsAdapter = new NewsAdapter(this);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         rvNews.setLayoutManager(linearLayoutManager);
@@ -79,5 +81,27 @@ public class MainActivity extends AppCompatActivity {
     public void onTapFab(View view) {
         Snackbar.make(view, "Replace with your own action - ButterKnife", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
+    }
+
+    @Override
+    public void onTapNewsItem() {
+        // params first : current context, second : target class
+        Intent intent = new Intent(getApplicationContext(), NewsDetailsActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTapCommentButton() {
+
+    }
+
+    @Override
+    public void onTapSendToButton() {
+
+    }
+
+    @Override
+    public void onTapFavoriteButton() {
+
     }
 }
