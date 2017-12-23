@@ -18,6 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import xyz.htooaungnaing.news.R;
 import xyz.htooaungnaing.news.adapters.NewsAdapter;
+import xyz.htooaungnaing.news.data.models.NewsModel;
 import xyz.htooaungnaing.news.delegates.NewsActionDelegate;
 
 public class MainActivity extends AppCompatActivity implements NewsActionDelegate{
@@ -52,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
 //        rvNews.setLayoutManager(gridLayoutManager);
 
         rvNews.setAdapter(mNewsAdapter);
+
+        //using singleton pattern
+        NewsModel.getsObjInstance().loadNews();
 
     }
 
