@@ -1,5 +1,7 @@
 package xyz.htooaungnaing.news.data.vo;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -8,16 +10,21 @@ import java.util.List;
 
 public class NewsVO {
 
+    @SerializedName("news-id")
     private String newsId;
     private String brief;
     private String details;
     private List<String> images;
+
+    @SerializedName("posted-date")
     private String postedDate;
 
     private PublicationVO publication;
 
     private List<FavoriteVO> favorites;
     private List<CommentVO> comments;
+
+    @SerializedName("sent-tos")
     private List<SendToVO> sendTos;
 
     public String getNewsId() {
