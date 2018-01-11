@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    android:layout_margin="8dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fl_top_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:id="@+id/iv_top_news_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/top_news_fire_icon"
+                android:layout_marginLeft="8dp"
+                />
+            <TextView
+                android:id="@+id/tv_top_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top News"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="4dp"/>
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_top_news"
+            android:layout_width="match_parent"
+            android:layout_height="252dp"
+            android:src="@drawable/inter_top_news"
+            android:layout_below="@id/fl_top_news"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/tv_top_news_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top_news"
+            android:layout_below="@id/iv_top_news"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="21dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_top_news_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Onefootball"
+            android:layout_alignLeft="@id/tv_top_news_caption"
+            android:layout_below="@id/tv_top_news_caption"
+            android:drawableLeft="@drawable/one_football"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="16dp"
+            />
+
+        <View
+            android:id="@+id/v_below_tv_top_news_caption"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/tv_top_news_icon"
+            android:background="@color/primary"/>
+
+        <FrameLayout
+            android:id="@+id/fl_sports_news_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/v_below_tv_top_news_caption"
+            android:layout_marginLeft="8dp"
+            >
+
+            <ImageView
+                android:id="@+id/iv_sports_news_1"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/sports_news_1"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="centerCrop"
+                />
+            <TextView
+                android:id="@+id/tv_sports_news_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sports_news_1"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="8dp"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_sports_news_1_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Onefootball"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="70dp"
+                android:drawableLeft="@drawable/one_football"
+                android:drawablePadding="8dp"
+                />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/v_below_fl_sports_news_1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/fl_sports_news_1"
+            android:background="@color/primary"/>
+
+        <FrameLayout
+            android:id="@+id/fl_sports_news_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/v_below_fl_sports_news_1"
+            android:layout_marginLeft="8dp"
+            >
+
+            <ImageView
+                android:id="@+id/iv_sports_news_2"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/sports_news_2"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="centerCrop"
+                />
+            <TextView
+                android:id="@+id/tv_sports_news_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sports_news_2"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="8dp"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_sports_news_2_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Onefootball"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="70dp"
+                android:drawableLeft="@drawable/one_football"
+                android:drawablePadding="8dp"
+                />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/v_below_fl_sports_news_2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/fl_sports_news_2"
+            android:background="@color/primary"/>
+
+        <FrameLayout
+            android:id="@+id/fl_sports_news_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/v_below_fl_sports_news_2"
+            android:layout_marginLeft="8dp"
+            >
+
+            <ImageView
+                android:id="@+id/iv_sports_news_3"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/sports_news_3"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="centerCrop"
+                />
+            <TextView
+                android:id="@+id/tv_sports_news_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sports_news_3"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="8dp"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_sports_news_3_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Onefootball"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="70dp"
+                android:drawableLeft="@drawable/one_football"
+                android:drawablePadding="8dp"
+                />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/v_below_fl_sports_news_3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/fl_sports_news_3"
+            android:background="@color/primary"/>
+
+        <FrameLayout
+            android:id="@+id/fl_sports_news_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/v_below_fl_sports_news_3"
+            android:layout_marginLeft="8dp"
+            >
+
+            <ImageView
+                android:id="@+id/iv_sports_news_4"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/sports_news_4"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="centerCrop"
+                />
+            <TextView
+                android:id="@+id/tv_sports_news_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sports_news_4"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="8dp"
+                android:textSize="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_sports_news_4_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Onefootball"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="70dp"
+                android:drawableLeft="@drawable/one_football"
+                android:drawablePadding="8dp"
+                />
+        </FrameLayout>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

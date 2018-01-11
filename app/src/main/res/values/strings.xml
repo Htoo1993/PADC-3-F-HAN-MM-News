@@ -15,4 +15,22 @@
 မော်ရင်ဟိုဟာ မန်ချက်စတာစီးတီးအသင်းရဲ့တောင်ပံကစားသမား စတားလင်းကို အာဆင်နယ်အသင်းရဲ့နည်းပြ အာစင်ဝင်းဂါးက ဒိုင်ဗင်ထိုးကျွမ်းကျင်သူလို့ ပြောကြားခဲ့တဲ့စကားကို သဘောတူကြောင်း ပြသခဲ့တာဖြစ်သလို ကွင်းလယ်ကစားသမား ဘာနာဒိုဆေးလ်ဗား ဘန်လေအသင်းနဲ့ပွဲစဉ်မှာ ဂိုးသမား ပုပ်နဲ့ တွေ့ဆုုံချိန်မှာ ဟန်ဆောင်လှဲချခဲ့တာကိုလည်း ရည်ညွှန်းလိုတဲ့သဘောနဲ့ ပြောကြားခဲ့တာဖြစ်ပါတယ်။
 "မန်စီးတီးနဲ့ပတ်သက်ပြီး ကျွန်တော်မကြိုက်တဲ့အချက်တစ်ချက်က ဘာလဲလို့ ခင်ဗျားတို့ မေးရင် သူတို့အသင်းရဲ့ကစားပုံက လွယ်လွယ်ကူကူနဲ့ ဟန်ချက်ပျက်သွားတာပါပဲ။ အဲဒါကြောင့််ပဲ ကြည့်ပါလား၊ ကွင်းထဲမှာ လေလေးနည်းနည်း တိုက်လိုက်တာနဲ့ သူတို့အသင်းက ကစားသမားတွေ ခဏခဏ လဲကျနေတာ"
 "မန်စီးတီးနဲ့ပွဲစဉ်မှာ ကျွန်တော် ဘယ်လိုကစားကွွက်နဲ့ကစားမလဲဆိုတာ လူတိုင်း သိချင်နေကြမှာပါ။ ပရိသတ်တွေအနေနဲ့လည်း ဒီလိုမေးခွန်းမျိုးလေး မေးချင်နေမှာပါ။ ဘယ်သူတွေနဲ့ ပွဲထွက်ကစားမလဲ၊ ဘယ်လိုကစားကွက်ပုံစံမျိုးနဲ့ကစားမလဲ ဆိုတာပေါ့။ ကျွန်တော်ကတော့ မပြောပြနိုင်ဘူး"လို့ ပြောကြားခဲ့ပါတယ်။</string>
+
+    <string name="title_news_by_category">News By Category</string>
+
+    <string name="top_news">Arda Turan in talks to join Istanbul Basaksehir from Barcelona</string>
+    <string name="sports_news_1">Schalke secure Hoffenheim striker Uth</string>
+    <string name="sports_news_2">Stroke City capture Austria defender from Rubin Kazan</string>
+    <string name="sports_news_3">Coutinho to Barca, our new host and more! > One- Two:Episode11</string>
+    <string name="sports_news_4">Tottenham winger N\'Koudou joins Burnley on loan</string>
+
+    <!--international news-->
+    <string name="top_news_title"><font style="color:#98acca">Daca must stay</font> / Judge blocks Trump move to end program for immigrants</string>
+    <string name="top_news_content">\'I\'ll take  the heart / Trumps touts \'bill of love\' for Dreamers</string>
+    <string name="brief_one">Buffet on Bitcoin / Cryptocurrencies \'will come to a bad end\',says billionaire investor</string>
+    <string name="brief_two">California mudslide / At least a dozen killed after rains pound Santa Barbara</string>
+    <string name="inter_news_1">Trump-Russia / Transcript raises questions about FBI's handling of concerns</string>
+    <string name="inter_news_2">Exclusive / US to loosen nuclear weapons policy, raising fears of nuclear war</string>
+    <string name="inter_news_3">James Franco / Actor denies sexual misconduct claims in Colbert interview</string>
+    <string name="inter_news_4">Catherine Deneuve / Claim of #MeToo witch-hunt sparks backlash</string>
 </resources>
