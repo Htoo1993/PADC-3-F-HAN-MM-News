@@ -54,7 +54,7 @@
             android:tint="@color/primary"
             />
 
-        <TextView
+        <net.aungpyaephyo.mmtextview.components.MMTextView
             android:id="@+id/tv_news_brief"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

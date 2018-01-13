@@ -21,6 +21,7 @@ import xyz.htooaungnaing.news.MMNewsApp;
 import xyz.htooaungnaing.news.R;
 import xyz.htooaungnaing.news.adapters.NewsAdapter;
 import xyz.htooaungnaing.news.data.models.NewsModel;
+import xyz.htooaungnaing.news.data.vo.NewsVO;
 import xyz.htooaungnaing.news.delegates.NewsActionDelegate;
 import xyz.htooaungnaing.news.events.LoadedNewsEvent;
 
@@ -51,7 +52,7 @@ public class NewsByCategoryFragment extends Fragment implements NewsActionDelega
     }
 
     @Override
-    public void onTapNewsItem() {
+    public void onTapNewsItem(NewsVO news) {
 
     }
 

@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import xyz.htooaungnaing.news.R;
 import xyz.htooaungnaing.news.viewitems.ImageInNewsDetailsViewItem;
 
@@ -14,9 +17,16 @@ import xyz.htooaungnaing.news.viewitems.ImageInNewsDetailsViewItem;
  */
 
 public class ImagesInNewsDetailsAdapter extends PagerAdapter {
+
+    private List<String> mImages;
+
+    public ImagesInNewsDetailsAdapter() {
+        mImages = new ArrayList<>();
+    }
+
     @Override
     public int getCount() {
-        return 6;
+        return mImages.size();
     }
 
     @Override
@@ -37,6 +47,7 @@ public class ImagesInNewsDetailsAdapter extends PagerAdapter {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         ImageInNewsDetailsViewItem view = (ImageInNewsDetailsViewItem) layoutInflater.inflate(R.layout.item_news_details_images, container, false);
         container.addView(view);
+        view.setData(mImages.get(position));
 
         return view;
     }

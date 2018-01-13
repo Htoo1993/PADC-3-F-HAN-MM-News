@@ -41,5 +41,5 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
 
-
+    implementation 'net.aungpyaephyo:mmtextview:1.1'
 }

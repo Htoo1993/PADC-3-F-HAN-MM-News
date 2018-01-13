@@ -6,11 +6,16 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import xyz.htooaungnaing.news.R;
 import xyz.htooaungnaing.news.adapters.ImagesInNewsDetailsAdapter;
+import xyz.htooaungnaing.news.data.models.NewsModel;
+import xyz.htooaungnaing.news.data.vo.NewsVO;
 
 /**
  * Created by htoo on 12/9/2017.
@@ -23,6 +28,9 @@ public class NewsDetailsActivity extends AppCompatActivity {
 
     @BindView(R.id.vp_news_details_images)
     ViewPager vpNewsDetailsImages;
+
+    @BindView(R.id.tv_news_details)
+    TextView tvNewsDetails;
 
     private ImagesInNewsDetailsAdapter mImagesInNewsDetailsAdapter;
 
@@ -38,8 +46,15 @@ public class NewsDetailsActivity extends AppCompatActivity {
 //        actionBar.setDisplayShowTitleEnabled(false);
 
         mImagesInNewsDetailsAdapter = new ImagesInNewsDetailsAdapter();
-
         vpNewsDetailsImages.setAdapter(mImagesInNewsDetailsAdapter);
 
+        String newsId = getIntent().getStringExtra("news_id");
+        NewsVO news = NewsModel.getsObjInstance().getNewsById(newsId);
+
+        bindData(news);
+    }
+
+    private void bindData(NewsVO news){
+        tvNewsDetails.setText(news.getDetails());
     }
 }

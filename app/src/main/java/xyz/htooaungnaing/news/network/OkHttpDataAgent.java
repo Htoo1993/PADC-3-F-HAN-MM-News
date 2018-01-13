@@ -57,7 +57,7 @@ public class OkHttpDataAgent implements NewsDataAgent {
             OkHttpClient httpClient = new OkHttpClient.Builder() //1
                     .connectTimeout(15, TimeUnit.SECONDS)
                     .readTimeout(15, TimeUnit.SECONDS)
-                    .writeTimeout(15, TimeUnit.SECONDS)
+                    .writeTimeout(60, TimeUnit.SECONDS)
                     .build();
 
             RequestBody formBody = new FormBody.Builder() //2
