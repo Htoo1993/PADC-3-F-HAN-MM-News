@@ -27,14 +27,17 @@ import butterknife.OnClick;
 import xyz.htooaungnaing.news.MMNewsApp;
 import xyz.htooaungnaing.news.R;
 import xyz.htooaungnaing.news.adapters.NewsAdapter;
+import xyz.htooaungnaing.news.data.models.LoginUserModel;
 import xyz.htooaungnaing.news.data.models.NewsModel;
 import xyz.htooaungnaing.news.data.vo.NewsVO;
 import xyz.htooaungnaing.news.delegates.BeforeLoginDelegate;
+import xyz.htooaungnaing.news.delegates.LoginUserDeletgate;
 import xyz.htooaungnaing.news.delegates.NewsActionDelegate;
 import xyz.htooaungnaing.news.events.LoadedNewsEvent;
+import xyz.htooaungnaing.news.viewpods.AccountControlViewPod;
 import xyz.htooaungnaing.news.viewpods.BeforeLoginUserViewPod;
 
-public class MainActivity extends AppCompatActivity implements NewsActionDelegate, BeforeLoginDelegate{
+public class MainActivity extends AppCompatActivity implements NewsActionDelegate, BeforeLoginDelegate, LoginUserDeletgate{
 
     @BindView(R.id.rv_news)
     RecyclerView rvNews;
@@ -54,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     private NewsAdapter mNewsAdapter;
 
     private BeforeLoginUserViewPod beforeLoginUserViewPod;
+
+    private AccountControlViewPod vpAccountControlViewPod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,8 +101,12 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
             }
         });
 
-        beforeLoginUserViewPod = (BeforeLoginUserViewPod) navigationView.getHeaderView(0);
-        beforeLoginUserViewPod.setDelegate(this);
+//        beforeLoginUserViewPod = (BeforeLoginUserViewPod) navigationView.getHeaderView(0);
+//        beforeLoginUserViewPod.setDelegate(this);
+        vpAccountControlViewPod = (AccountControlViewPod) navigationView.getHeaderView(0);
+        vpAccountControlViewPod.setDelegate((BeforeLoginDelegate) this);
+        vpAccountControlViewPod.setDelegate((LoginUserDeletgate) this);
+
 
         //using singleton pattern
         NewsModel.getsObjInstance().loadNews();
@@ -186,5 +195,10 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     public void onTapToRegister() {
         Intent intent = AccountControlActivity.newIntentRegister(getApplicationContext());
         startActivity(intent);
+    }
+
+    @Override
+    public void onTapLogout() {
+        LoginUserModel.getsObjInstance().logout();
     }
 }

@@ -55,7 +55,7 @@
         android:layout_width="320dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/view_pod_before_login"
+        app:headerLayout="@layout/view_pod_account_control"
         app:menu="@menu/left_menu"
         app:itemTextColor="@drawable/state_left_menu_item"
         />

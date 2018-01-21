@@ -7,31 +7,27 @@
         android:id="@+id/iv_user_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/drawer_background"
         android:scaleType="centerCrop"
-        />
+        android:src="@drawable/drawer_background" />
 
     <net.aungpyaephyo.mmtextview.components.MMButton
         android:id="@+id/btn_to_register"
+        style="@style/accent_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/before_login_btnregister_text"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="@dimen/margin_medium_2"
-        style="@style/accent_button"
-        />
+        android:text="@string/before_login_btnregister_text" />
 
     <net.aungpyaephyo.mmtextview.components.MMButton
         android:id="@+id/btn_to_login"
+        style="@style/accent_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/before_login_btnlogin_text"
         android:layout_above="@id/btn_to_register"
         android:layout_alignRight="@id/btn_to_register"
-        style="@style/accent_button"
-        />
-
+        android:text="@string/before_login_btnlogin_text" />
 
 
 </xyz.htooaungnaing.news.viewpods.BeforeLoginUserViewPod>

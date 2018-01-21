@@ -45,6 +45,16 @@
         android:layout_marginTop="@dimen/margin_medium"
         />
 
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_logout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/margin_medium_2"
+        style="@style/accent_button"
+        />
 
 
 </xyz.htooaungnaing.news.viewpods.LoginUserViewPod>

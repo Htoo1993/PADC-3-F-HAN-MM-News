@@ -36,8 +36,19 @@ public class LoginUserModel {
         mNewsDataAgent.loadLoginUser(phoneNo, password);
     }
 
+    public boolean isUserLogin(){
+        return mLoginUser != null;
+    }
+
     @Subscribe(threadMode = ThreadMode.BACKGROUND)
     public void onLoginUserSuccess(SuccessLoginEvent event){
         mLoginUser = event.getLoginUser();
+    }
+
+    public void logout(){
+        mLoginUser = null;
+
+        UserLogoutEvent event = new UserLogoutEvent();
+        EventBus.getDefault().post(event);
     }
 }
