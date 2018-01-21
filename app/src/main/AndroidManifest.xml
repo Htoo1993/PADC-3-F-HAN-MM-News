@@ -30,6 +30,12 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+
+        <activity android:name=".activities.AccountControlActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+
+        </activity>
     </application>
 
 </manifest>

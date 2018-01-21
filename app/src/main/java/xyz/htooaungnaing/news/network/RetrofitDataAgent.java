@@ -1,7 +1,5 @@
 package xyz.htooaungnaing.news.network;
 
-import android.support.v4.view.NestedScrollingChild;
-
 import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.EventBus;
@@ -14,7 +12,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import xyz.htooaungnaing.news.events.SuccessLoginEvent;
 import xyz.htooaungnaing.news.events.LoadedNewsEvent;
+import xyz.htooaungnaing.news.network.responses.GetLoginUserResponse;
 import xyz.htooaungnaing.news.network.responses.GetNewsResponse;
 
 /**
@@ -71,5 +71,26 @@ public class RetrofitDataAgent implements NewsDataAgent {
             }
         });
 
+    }
+
+    @Override
+    public void loadLoginUser(String phoneNo, String password) {
+        Call<GetLoginUserResponse> getLoginUserResponseCall = mNewsApi.getLoginUser(phoneNo,password);
+        getLoginUserResponseCall.enqueue(new Callback<GetLoginUserResponse>() {
+            @Override
+            public void onResponse(Call<GetLoginUserResponse> call, Response<GetLoginUserResponse> response) {
+                GetLoginUserResponse getLoginUserResponse = response.body();
+
+                if (getLoginUserResponse != null){
+                    SuccessLoginEvent event = new SuccessLoginEvent(getLoginUserResponse.getLoginUser());
+                    EventBus.getDefault().post(event);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GetLoginUserResponse> call, Throwable t) {
+
+            }
+        });
     }
 }

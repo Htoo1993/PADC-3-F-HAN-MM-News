@@ -6,7 +6,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import org.w3c.dom.Text;
 
@@ -32,6 +35,15 @@ public class NewsDetailsActivity extends AppCompatActivity {
     @BindView(R.id.tv_news_details)
     TextView tvNewsDetails;
 
+    @BindView(R.id.iv_publication_logo)
+    ImageView ivPublicationLogo;
+
+    @BindView(R.id.tv_publication_title)
+    TextView tvPublicationTitle;
+
+    @BindView(R.id.tv_publication_date)
+    TextView tvPublicationDate;
+
     private ImagesInNewsDetailsAdapter mImagesInNewsDetailsAdapter;
 
     @Override
@@ -55,6 +67,11 @@ public class NewsDetailsActivity extends AppCompatActivity {
     }
 
     private void bindData(NewsVO news){
+        Glide.with(ivPublicationLogo.getContext())
+                .load(news.getPublication().getLogo())
+                .into(ivPublicationLogo);
+        tvPublicationTitle.setText(news.getPublication().getTitle());
+        tvPublicationDate.setText(news.getPostedDate());
         tvNewsDetails.setText(news.getDetails());
     }
 }

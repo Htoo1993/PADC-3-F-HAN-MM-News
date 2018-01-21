@@ -28,8 +28,14 @@ public class OkHttpDataAgent implements NewsDataAgent {
 
     private static OkHttpDataAgent sObjInstance;
 
-    private OkHttpDataAgent() {
+    private OkHttpClient mHttpClient;
 
+    private OkHttpDataAgent() {
+        mHttpClient = new OkHttpClient.Builder() //1
+                .connectTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(60, TimeUnit.SECONDS)
+                .build();
     }
 
     public static OkHttpDataAgent getsObjInstance() {
@@ -44,21 +50,27 @@ public class OkHttpDataAgent implements NewsDataAgent {
 
     @Override
     public void loadNews() {
-        new LoadNewsTask().execute("http://padcmyanmar.com/padc-3/mm-news/apis/v1/getMMNews.php");
+        new LoadNewsTask(mHttpClient).execute("http://padcmyanmar.com/padc-3/mm-news/apis/v1/getMMNews.php");
+    }
+
+    @Override
+    public void loadLoginUser(String phoneNo, String password) {
+
     }
 
     //AsyncTask<Frisrt param : for Url, second param : void, thrid param : json(text)
     private static class LoadNewsTask extends AsyncTask<String, Void, String> {
 
+        private OkHttpClient mHttpClient;
+
+        public LoadNewsTask(OkHttpClient okHttpClient) {
+            super();
+            mHttpClient = okHttpClient;
+        }
+
         @Override
         protected String doInBackground(String... urls) {
             String url = urls[0];
-
-            OkHttpClient httpClient = new OkHttpClient.Builder() //1
-                    .connectTimeout(15, TimeUnit.SECONDS)
-                    .readTimeout(15, TimeUnit.SECONDS)
-                    .writeTimeout(60, TimeUnit.SECONDS)
-                    .build();
 
             RequestBody formBody = new FormBody.Builder() //2
                     .add("access_token", "b002c7e1a528b7cb460933fc2875e916")
@@ -73,7 +85,7 @@ public class OkHttpDataAgent implements NewsDataAgent {
             String responseString = null;
 
             try {
-                Response response = httpClient.newCall(request).execute(); //4
+                Response response = mHttpClient.newCall(request).execute(); //4
                 if(response.isSuccessful() && response.body() != null){
                     responseString = response.body().string();
                 }

@@ -33,4 +33,20 @@
     <string name="inter_news_2">Exclusive / US to loosen nuclear weapons policy, raising fears of nuclear war</string>
     <string name="inter_news_3">James Franco / Actor denies sexual misconduct claims in Colbert interview</string>
     <string name="inter_news_4">Catherine Deneuve / Claim of #MeToo witch-hunt sparks backlash</string>
+
+    <string name="menu_item_all_news">All News</string>
+    <string name="menu_item_news_by_category">News By Category</string>
+    
+    <string name="all_news">All News</string>
+
+    <string name="before_login_btnlogin_text">LOGIN ၀င်ရန်</string>
+    <string name="before_login_btnregister_text">REGISTER ပြုလုပ်ရန်</string>
+
+    <string name="btn_forgot_password"><i><u>Password မေ့သွားလို့</u></i></string>
+    <string name="btn_to_register"><i><u>New User ? Register</u></i></string>
+    <string name="lbl_navigate_to_login"><u><i>Already have account ?</i></u></string>
+    <string name="hint_enter_phone">Your Phone Number</string>
+    <string name="hint_enter_email">Your Email</string>
+    <string name="hint_enter_password">Password</string>
+    <string name="lbl_mark_my_home_on_google_map"><u><i>Mark my home on Google Map</i></u></string>
 </resources>

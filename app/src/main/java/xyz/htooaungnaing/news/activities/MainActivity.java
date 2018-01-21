@@ -2,10 +2,13 @@ package xyz.htooaungnaing.news.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -18,8 +21,6 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -28,10 +29,12 @@ import xyz.htooaungnaing.news.R;
 import xyz.htooaungnaing.news.adapters.NewsAdapter;
 import xyz.htooaungnaing.news.data.models.NewsModel;
 import xyz.htooaungnaing.news.data.vo.NewsVO;
+import xyz.htooaungnaing.news.delegates.BeforeLoginDelegate;
 import xyz.htooaungnaing.news.delegates.NewsActionDelegate;
 import xyz.htooaungnaing.news.events.LoadedNewsEvent;
+import xyz.htooaungnaing.news.viewpods.BeforeLoginUserViewPod;
 
-public class MainActivity extends AppCompatActivity implements NewsActionDelegate{
+public class MainActivity extends AppCompatActivity implements NewsActionDelegate, BeforeLoginDelegate{
 
     @BindView(R.id.rv_news)
     RecyclerView rvNews;
@@ -42,7 +45,15 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
+    @BindView(R.id.navigation_view)
+    NavigationView navigationView;
+
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
+
     private NewsAdapter mNewsAdapter;
+
+    private BeforeLoginUserViewPod beforeLoginUserViewPod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +74,30 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
 //        rvNews.setLayoutManager(gridLayoutManager);
 
         rvNews.setAdapter(mNewsAdapter);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.all_news);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_24dp);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                if(item.getItemId() == R.id.menu_news_by_category) {
+                    Intent intent = NewsByCategoryActivity.newIntent(getApplicationContext());
+                    startActivity(intent);
+
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                }
+
+                return false;
+            }
+        });
+
+        beforeLoginUserViewPod = (BeforeLoginUserViewPod) navigationView.getHeaderView(0);
+        beforeLoginUserViewPod.setDelegate(this);
 
         //using singleton pattern
         NewsModel.getsObjInstance().loadNews();
@@ -98,6 +133,8 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }else if(id == android.R.id.home){
+            drawerLayout.openDrawer(GravityCompat.START);
         }
 
         return super.onOptionsItemSelected(item);
@@ -136,5 +173,18 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     public void onNewsLoaded(LoadedNewsEvent event){
         Log.d(MMNewsApp.LOG_TAG, "onNewsLoaded : " + event.getNewsList().size());
         mNewsAdapter.setNews(event.getNewsList());
+    }
+
+
+    @Override
+    public void onTapToLogin() {
+        Intent intent = AccountControlActivity.newIntentLogin(getApplicationContext());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTapToRegister() {
+        Intent intent = AccountControlActivity.newIntentRegister(getApplicationContext());
+        startActivity(intent);
     }
 }

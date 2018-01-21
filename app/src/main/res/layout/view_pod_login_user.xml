@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xyz.htooaungnaing.news.viewpods.LoginUserViewPod xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/user_profile_view_pod_height"
+    >
+
+    <ImageView
+        android:id="@+id/iv_user_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/drawer_background"
+        android:scaleType="centerCrop"
+        />
+
+    <ImageView
+        android:id="@+id/iv_user_profile"
+        android:layout_width="@dimen/regular_user_profile"
+        android:layout_height="@dimen/regular_user_profile"
+        android:src="@drawable/dummy_user_picture"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="htoo"
+        android:layout_alignLeft="@id/iv_user_profile"
+        android:layout_below="@id/iv_user_profile"
+        android:textColor="@color/white_full"
+        android:textSize="@dimen/text_regular"
+        />
+
+    <TextView
+        android:id="@+id/tv_login_user_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="097783745338"
+        android:layout_alignLeft="@id/iv_user_profile"
+        android:layout_below="@id/tv_name"
+        android:textColor="@color/white_full"
+        android:textSize="@dimen/text_regular"
+        android:layout_marginTop="@dimen/margin_medium"
+        />
+
+
+
+</xyz.htooaungnaing.news.viewpods.LoginUserViewPod>

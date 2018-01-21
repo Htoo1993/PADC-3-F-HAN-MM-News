@@ -25,4 +25,11 @@
         <item name="android:shadowColor">@color/black_full</item>
         <item name="android:shadowRadius">2</item>
     </style>
+
+    <style name="accent_button">
+        <item name="android:background">@color/accent</item>
+        <item name="android:paddingLeft">@dimen/margin_medium_2</item>
+        <item name="android:paddingRight">@dimen/margin_medium_2</item>
+        <item name="android:textColor">@color/white_full</item>
+    </style>
 </resources>

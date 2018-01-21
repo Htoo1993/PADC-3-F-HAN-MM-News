@@ -4,6 +4,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
+import xyz.htooaungnaing.news.network.responses.GetLoginUserResponse;
 import xyz.htooaungnaing.news.network.responses.GetNewsResponse;
 
 /**
@@ -16,5 +17,10 @@ public interface NewsApi {
     @POST("getMMNews.php")
     Call<GetNewsResponse> getNews(@Field("page") int page,
                                   @Field("access_token") String accessToken); // parameter api's request parameter
+
+    @FormUrlEncoded
+    @POST("login.php")
+    Call<GetLoginUserResponse> getLoginUser(@Field("phoneNo") String phoneNo,
+                                            @Field("password") String password);
 
 }
