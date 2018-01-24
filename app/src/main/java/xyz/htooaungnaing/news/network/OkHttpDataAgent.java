@@ -58,6 +58,11 @@ public class OkHttpDataAgent implements NewsDataAgent {
 
     }
 
+    @Override
+    public void register(String phoneNo, String password, String name) {
+
+    }
+
     //AsyncTask<Frisrt param : for Url, second param : void, thrid param : json(text)
     private static class LoadNewsTask extends AsyncTask<String, Void, String> {
 

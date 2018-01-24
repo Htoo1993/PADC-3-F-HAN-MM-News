@@ -32,9 +32,6 @@ import xyz.htooaungnaing.news.events.SuccessLoginEvent;
 
 public class LoginFragment extends Fragment {
 
-    private static final String CORRECT_EMAIL = "abc@gmail.com";
-    private static final String CORRECT_PASSWORD = "Abcdefg"; //Constant Attribute
-
     @BindView(R.id.et_email_or_phone)
     EditText etEmailOrPhone;
 

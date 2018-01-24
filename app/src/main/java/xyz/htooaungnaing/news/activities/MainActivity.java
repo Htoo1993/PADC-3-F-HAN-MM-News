@@ -107,7 +107,6 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
         vpAccountControlViewPod.setDelegate((BeforeLoginDelegate) this);
         vpAccountControlViewPod.setDelegate((LoginUserDeletgate) this);
 
-
         //using singleton pattern
         NewsModel.getsObjInstance().loadNews();
 
