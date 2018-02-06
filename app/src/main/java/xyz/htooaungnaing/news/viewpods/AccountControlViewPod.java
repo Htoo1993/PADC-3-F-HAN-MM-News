@@ -14,6 +14,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import butterknife.OnClick;
 import xyz.htooaungnaing.news.R;
 import xyz.htooaungnaing.news.data.models.LoginUserModel;
 import xyz.htooaungnaing.news.data.models.UserLogoutEvent;
@@ -32,6 +33,8 @@ public class AccountControlViewPod extends FrameLayout {
 
     @BindView(R.id.vp_login_user)
     LoginUserViewPod vpLoginUser;
+
+    private LoginUserDeletgate mLoginUserDeletgate;
 
     public AccountControlViewPod(@NonNull Context context) {
         super(context);
@@ -61,6 +64,12 @@ public class AccountControlViewPod extends FrameLayout {
 
     public void setDelegate(LoginUserDeletgate loginUserDeletgate){
         vpLoginUser.setDelegate(loginUserDeletgate);
+        mLoginUserDeletgate = loginUserDeletgate;
+    }
+
+    @OnClick(R.id.vp_login_user)
+    public void onTapLoginUser(View view){
+        mLoginUserDeletgate.onTapLoginuser();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -72,7 +81,7 @@ public class AccountControlViewPod extends FrameLayout {
     }
 
     private void refreshUserSession(){
-        if(LoginUserModel.getsObjInstance().isUserLogin()){
+        if(LoginUserModel.getsObjInstance(getContext()).isUserLogin()){
             vpBeforeLogin.setVisibility(View.GONE);
             vpLoginUser.setVisibility(View.VISIBLE);
         } else {

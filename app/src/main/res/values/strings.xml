@@ -51,4 +51,6 @@
     <string name="lbl_mark_my_home_on_google_map"><u><i>Mark my home on Google Map</i></u></string>
 
     <string name="btn_logout">Logout</string>
+    <string name="msg_generic_no_data">လက်ရှိ data ပြစရာ မရှိသေးပါ</string>
+    <string name="lbl_refresh">Data ပြန်လုပ်လုပ်ရန်</string>
 </resources>

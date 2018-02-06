@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import xyz.htooaungnaing.news.R;
+import xyz.htooaungnaing.news.delegates.LoginScreenDelegate;
+import xyz.htooaungnaing.news.delegates.LoginUserDeletgate;
 import xyz.htooaungnaing.news.fragments.LoginFragment;
 import xyz.htooaungnaing.news.fragments.RegisterFragment;
 
@@ -14,7 +16,7 @@ import xyz.htooaungnaing.news.fragments.RegisterFragment;
  * Created by htoo on 1/20/2018.
  */
 
-public class AccountControlActivity extends AppCompatActivity {
+public class AccountControlActivity extends BaseActivity implements LoginScreenDelegate {
 
     private static final String IE_SCREEN_TYPE = "IE_SCREEN_TYPE";
     private static final int SCREEN_TYPE_LOGIN = 1;
@@ -49,5 +51,14 @@ public class AccountControlActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    public void onTapToRegister() {
+        getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit)
+                .replace(R.id.fl_container, new RegisterFragment())
+                .addToBackStack("ToRegister")
+                .commit();
     }
 }

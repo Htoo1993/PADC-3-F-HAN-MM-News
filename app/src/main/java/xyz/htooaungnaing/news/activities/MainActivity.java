@@ -1,6 +1,8 @@
 package xyz.htooaungnaing.news.activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +10,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -36,8 +39,9 @@ import xyz.htooaungnaing.news.delegates.NewsActionDelegate;
 import xyz.htooaungnaing.news.events.LoadedNewsEvent;
 import xyz.htooaungnaing.news.viewpods.AccountControlViewPod;
 import xyz.htooaungnaing.news.viewpods.BeforeLoginUserViewPod;
+import xyz.htooaungnaing.news.viewpods.EmptyViewPod;
 
-public class MainActivity extends AppCompatActivity implements NewsActionDelegate, BeforeLoginDelegate, LoginUserDeletgate{
+public class MainActivity extends BaseActivity implements NewsActionDelegate, BeforeLoginDelegate, LoginUserDeletgate{
 
     @BindView(R.id.rv_news)
     RecyclerView rvNews;
@@ -54,11 +58,19 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
 
+    @BindView(R.id.in_view_pod)
+    EmptyViewPod inViewPod;
+
+    @BindView(R.id.swipe_refresh_layout)
+    SwipeRefreshLayout swipeRefreshLayout;
+
     private NewsAdapter mNewsAdapter;
 
     private BeforeLoginUserViewPod beforeLoginUserViewPod;
 
     private AccountControlViewPod vpAccountControlViewPod;
+
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,10 +119,22 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
         vpAccountControlViewPod.setDelegate((BeforeLoginDelegate) this);
         vpAccountControlViewPod.setDelegate((LoginUserDeletgate) this);
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                NewsModel.getsObjInstance().loadNews();
+            }
+        });
+        swipeRefreshLayout.setRefreshing(true);
         //using singleton pattern
         NewsModel.getsObjInstance().loadNews();
 
+        mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setMessage("Please wait while data is loading");
+        mProgressDialog.show();
     }
+
+
 
     @Override
     protected void onStart() {
@@ -180,7 +204,13 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onNewsLoaded(LoadedNewsEvent event){
         Log.d(MMNewsApp.LOG_TAG, "onNewsLoaded : " + event.getNewsList().size());
-        mNewsAdapter.setNews(event.getNewsList());
+        swipeRefreshLayout.setRefreshing(false);
+        mProgressDialog.dismiss();
+        if(!event.getNewsList().isEmpty()){
+            mNewsAdapter.setNews(event.getNewsList());
+            inViewPod.setVisibility(View.GONE);
+        }
+
     }
 
 
@@ -198,6 +228,12 @@ public class MainActivity extends AppCompatActivity implements NewsActionDelegat
 
     @Override
     public void onTapLogout() {
-        LoginUserModel.getsObjInstance().logout();
+        LoginUserModel.getsObjInstance(getApplicationContext()).logout();
+    }
+
+    @Override
+    public void onTapLoginuser() {
+        Intent intent = UserProfileActivity.newIntent(getApplicationContext());
+        startActivity(intent);
     }
 }

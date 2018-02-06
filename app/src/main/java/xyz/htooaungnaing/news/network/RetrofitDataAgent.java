@@ -1,5 +1,7 @@
 package xyz.htooaungnaing.news.network;
 
+import android.content.Context;
+
 import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.EventBus;
@@ -76,7 +78,7 @@ public class RetrofitDataAgent implements NewsDataAgent {
     }
 
     @Override
-    public void loadLoginUser(String phoneNo, String password) {
+    public void loadLoginUser(final Context context, String phoneNo, String password) {
         Call<GetLoginUserResponse> getLoginUserResponseCall = mNewsApi.getLoginUser(phoneNo,password);
         getLoginUserResponseCall.enqueue(new Callback<GetLoginUserResponse>() {
             @Override
@@ -84,7 +86,7 @@ public class RetrofitDataAgent implements NewsDataAgent {
                 GetLoginUserResponse getLoginUserResponse = response.body();
 
                 if (getLoginUserResponse != null){
-                    SuccessLoginEvent event = new SuccessLoginEvent(getLoginUserResponse.getLoginUser());
+                    SuccessLoginEvent event = new SuccessLoginEvent(getLoginUserResponse.getLoginUser(), context);
                     EventBus.getDefault().post(event);
                 }
             }

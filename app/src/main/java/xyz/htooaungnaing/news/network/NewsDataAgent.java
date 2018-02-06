@@ -1,5 +1,7 @@
 package xyz.htooaungnaing.news.network;
 
+import android.content.Context;
+
 /**
  * Created by htoo on 12/23/2017.
  */
@@ -12,11 +14,11 @@ public interface NewsDataAgent {
     void loadNews();
 
     /**
-     *
+     * @param context
      * @param phoneNo
      * @param password
      */
-    void loadLoginUser(String phoneNo, String password);
+    void loadLoginUser(Context context, String phoneNo, String password);
 
     /**
      *

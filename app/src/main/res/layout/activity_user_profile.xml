@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="253dp"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/primary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+            <ImageView
+                android:id="@+id/iv_profile_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/drawer_background" />
+
+            <ImageView
+                android:id="@+id/iv_edit_cover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:clickable="true"
+                android:foreground="@drawable/ripple_white"
+                android:padding="@dimen/margin_medium"
+                android:src="@drawable/ic_edit_24dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_profile_image"
+                    android:layout_width="@dimen/regular_user_profile"
+                    android:layout_height="@dimen/regular_user_profile"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/margin_medium_2"
+                    android:layout_marginLeft="@dimen/publication_distance"
+                    android:src="@drawable/dummy_user_picture" />
+
+                <ImageView
+                    android:id="@+id/iv_edit_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/iv_profile_image"
+                    android:layout_alignRight="@id/iv_profile_image"
+                    android:clickable="true"
+                    android:foreground="@drawable/ripple_white"
+                    android:padding="@dimen/margin_medium"
+                    android:src="@drawable/ic_edit_24dp" />
+
+            </RelativeLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/primary">
+
+            <EditText
+                android:id="@+id/et_profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:textColorHint="@color/primary" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_profile_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_profile_name"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/primary">
+
+            <EditText
+                android:id="@+id/et_profile_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone"
+                android:textColorHint="@color/primary" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_profile_phone"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/primary">
+
+            <EditText
+                android:id="@+id/et_profile_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:textColorHint="@color/primary" />
+        </android.support.design.widget.TextInputLayout>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

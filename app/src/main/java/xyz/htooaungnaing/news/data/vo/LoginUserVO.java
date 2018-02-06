@@ -12,6 +12,19 @@ public class LoginUserVO {
     private String profileUrl;
     private String coverUrl;
 
+    public LoginUserVO() {
+
+    }
+
+    public LoginUserVO(int userId, String name, String email, String phoneNo, String profileUrl, String coverUrl) {
+        this.userId = userId;
+        this.name = name;
+        this.email = email;
+        this.phoneNo = phoneNo;
+        this.profileUrl = profileUrl;
+        this.coverUrl = coverUrl;
+    }
+
     public int getUserId() {
         return userId;
     }

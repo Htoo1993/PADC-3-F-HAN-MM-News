@@ -1,5 +1,6 @@
 package xyz.htooaungnaing.news.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -24,6 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import xyz.htooaungnaing.news.R;
 import xyz.htooaungnaing.news.data.models.LoginUserModel;
+import xyz.htooaungnaing.news.delegates.LoginScreenDelegate;
 import xyz.htooaungnaing.news.events.SuccessLoginEvent;
 
 /**
@@ -41,8 +43,13 @@ public class LoginFragment extends Fragment {
     @BindView(R.id.btn_forget_password)
     TextView btnForgetPassword;
 
-    @BindView(R.id.btn_to_register)
-    TextView btnToRegister;
+    private LoginScreenDelegate mLoginScreenDelegate;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mLoginScreenDelegate = (LoginScreenDelegate) context;
+    }
 
     @Nullable
     @Override
@@ -70,9 +77,14 @@ public class LoginFragment extends Fragment {
         String emailOrPhone = etEmailOrPhone.getText().toString();
         String password = etPassword.getText().toString();
 
-        LoginUserModel.getsObjInstance().loginUser(emailOrPhone,password);
+        LoginUserModel.getsObjInstance(getContext()).loginUser(getContext(), emailOrPhone, password);
 
 
+    }
+
+    @OnClick(R.id.btn_to_register)
+    public void onTapToRegister(View v){
+        mLoginScreenDelegate.onTapToRegister();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

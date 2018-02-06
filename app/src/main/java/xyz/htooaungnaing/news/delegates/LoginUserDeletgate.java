@@ -8,4 +8,6 @@ public interface LoginUserDeletgate {
 
     void onTapLogout();
 
+    void onTapLoginuser();
+
 }

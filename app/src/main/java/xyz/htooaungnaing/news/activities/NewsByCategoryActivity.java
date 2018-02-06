@@ -24,7 +24,7 @@ import xyz.htooaungnaing.news.fragments.SportsNewsFragment;
  * Created by htoo on 1/7/2018.
  */
 
-public class NewsByCategoryActivity extends AppCompatActivity {
+public class NewsByCategoryActivity extends BaseActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
