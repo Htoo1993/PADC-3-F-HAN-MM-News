@@ -80,4 +80,8 @@ public class LoginUserModel {
         UserLogoutEvent event = new UserLogoutEvent();
         EventBus.getDefault().post(event);
     }
+
+    public LoginUserVO getmLoginUser(){
+        return mLoginUser;
+    }
 }

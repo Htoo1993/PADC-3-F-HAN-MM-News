@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">PADC-3-F-HAN-MM-News</string>
     <string name="action_settings">Settings</string>
 
@@ -53,4 +53,6 @@
     <string name="btn_logout">Logout</string>
     <string name="msg_generic_no_data">လက်ရှိ data ပြစရာ မရှိသေးပါ</string>
     <string name="lbl_refresh">Data ပြန်လုပ်လုပ်ရန်</string>
+
+    <string name="msg_to_exit"><b><xliff:g id="name">%1$s</xliff:g></b>, Are you sure to exit MM-News</string>
 </resources>
