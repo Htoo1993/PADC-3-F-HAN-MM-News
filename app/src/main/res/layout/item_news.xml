@@ -76,33 +76,71 @@
             android:src="@drawable/img_dummy_news"
             android:layout_below="@id/tv_news_brief"
             android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
             />
 
-        <TextView
-            android:id="@+id/tv_action_result"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/ll_news_statistics"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3 Likes - 3 Comments - Sent to 6 people"
+            android:orientation="horizontal"
             android:layout_below="@id/iv_news"
             android:textColor="@color/primary"
             android:layout_marginLeft="8dp"
-            />
+            android:layout_marginTop="8dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 likes"
+                android:textColor="@color/primary"
+                android:padding="@dimen/margin_small"
+                android:foreground="@drawable/ripple_primary"
+                />
+
+            <TextView
+                android:id="@+id/tv_comments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" - 5 comments"
+                android:textColor="@color/primary"
+                android:padding="@dimen/margin_small"
+                android:foreground="@drawable/ripple_primary"
+                />
+
+            <TextView
+                android:id="@+id/tv_sent_tos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" - Sent to 3 people"
+                android:textColor="@color/primary"
+                android:padding="@dimen/margin_small"
+                android:foreground="@drawable/ripple_primary"
+                />
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/ll_user_actions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/tv_action_result"
+            android:layout_below="@id/ll_news_statistics"
             android:weightSum="2"
             android:layout_marginTop="8dp"
             >
 
             <FrameLayout
+                android:id="@+id/fl_comment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="8dp"
+                android:foreground="@drawable/ripple_primary"
+                android:clickable="true"
                 >
 
                 <TextView

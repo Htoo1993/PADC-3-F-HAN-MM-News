@@ -55,4 +55,9 @@
     <string name="lbl_refresh">Data ပြန်လုပ်လုပ်ရန်</string>
 
     <string name="msg_to_exit"><b><xliff:g id="name">%1$s</xliff:g></b>, Are you sure to exit MM-News</string>
+
+    <string name="format_like_users"><xliff:g id="no_of_likes">%1$d</xliff:g> Likes</string>
+    <string name="format_comment_users"> - <xliff:g id="no_of_comment">%1$d</xliff:g> Comments</string>
+    <string name="format_sent_tos_users"> - <xliff:g id="no_of_sent_tos">%1$d</xliff:g> Sent Tos</string>
+    <string name="btn_add_comment">Add Comment</string>
 </resources>

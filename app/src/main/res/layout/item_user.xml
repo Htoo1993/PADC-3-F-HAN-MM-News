@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_user_profile"
+        android:layout_width="@dimen/regular_user_profile"
+        android:layout_height="@dimen/regular_user_profile"
+        android:src="@drawable/dummy_user_picture"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mg Mg"
+        android:layout_toRightOf="@id/iv_user_profile"
+        android:layout_margin="@dimen/margin_medium"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/text_regular_2x"
+        />
+
+    <TextView
+        android:id="@+id/tv_phone_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+959 44854 2341"
+        android:layout_below="@id/tv_name"
+        android:layout_alignLeft="@id/tv_name"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/text_regular"
+        />
+
+    <TextView
+        android:id="@+id/tv_timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6:45 AM, Feb 3 2018"
+        android:layout_below="@id/tv_phone_no"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_alignLeft="@id/tv_name"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/text_small"
+        />
+
+</RelativeLayout>

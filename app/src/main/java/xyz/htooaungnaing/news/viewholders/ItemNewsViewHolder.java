@@ -40,6 +40,16 @@ public class ItemNewsViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.iv_news)
     ImageView ivNews;
 
+    @BindView(R.id.tv_likes)
+    TextView tvLikes;
+
+    @BindView(R.id.tv_comments)
+    TextView tvComments;
+
+    @BindView(R.id.tv_sent_tos)
+    TextView tvSentTos;
+
+
     public ItemNewsViewHolder(View itemView, NewsActionDelegate newsActionDelegate) {
         super(itemView);
 
@@ -58,6 +68,26 @@ public class ItemNewsViewHolder extends RecyclerView.ViewHolder {
     @OnClick(R.id.fl_send_to)
     public void onTapSendTo(View view){
         mNewsActionDelegate.onTapSendToButton(mNews);
+    }
+
+    @OnClick(R.id.tv_likes)
+    public void onTapLikeUsers(View v){
+        mNewsActionDelegate.onTapLikeUsers(mNews);
+    }
+
+    @OnClick(R.id.tv_comments)
+    public void onTapCommentUsers(View v){
+        mNewsActionDelegate.onTapCommentUsers(mNews);
+    }
+
+    @OnClick(R.id.tv_sent_tos)
+    public void onTapSentToUsers(View v){
+        mNewsActionDelegate.onTapSentToUsers(mNews);
+    }
+
+    @OnClick(R.id.fl_comment)
+    public void onTapSendComment(View view){
+        mNewsActionDelegate.onTapCommentButton();
     }
 
     public void setNews(NewsVO news){
@@ -79,6 +109,16 @@ public class ItemNewsViewHolder extends RecyclerView.ViewHolder {
         } else {
             ivNews.setVisibility(View.GONE);
         }
+
+        tvLikes.setText(tvLikes.getContext().getResources().getString(R.string.format_like_users,
+                news.getFavorites().size()));
+
+        tvComments.setText(tvComments.getContext().getResources().getString(R.string.format_comment_users,
+                news.getComments().size()));
+
+        tvSentTos.setText(tvSentTos.getContext().getResources().getString(R.string.format_sent_tos_users,
+                news.getSendTos().size()));
+
 
     }
 }

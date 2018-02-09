@@ -44,6 +44,8 @@ import xyz.htooaungnaing.news.data.vo.NewsVO;
 import xyz.htooaungnaing.news.delegates.BeforeLoginDelegate;
 import xyz.htooaungnaing.news.delegates.LoginUserDeletgate;
 import xyz.htooaungnaing.news.delegates.NewsActionDelegate;
+import xyz.htooaungnaing.news.dialogs.AddCommentDialog;
+import xyz.htooaungnaing.news.dialogs.LikeUsersDialog;
 import xyz.htooaungnaing.news.events.LoadedNewsEvent;
 import xyz.htooaungnaing.news.viewpods.AccountControlViewPod;
 import xyz.htooaungnaing.news.viewpods.BeforeLoginUserViewPod;
@@ -256,7 +258,8 @@ public class MainActivity extends BaseActivity implements NewsActionDelegate, Be
 
     @Override
     public void onTapCommentButton() {
-
+        AddCommentDialog dialog = new AddCommentDialog(this);
+        dialog.show();
     }
 
     @Override
@@ -280,6 +283,22 @@ public class MainActivity extends BaseActivity implements NewsActionDelegate, Be
 
     @Override
     public void onTapFavoriteButton() {
+
+    }
+
+    @Override
+    public void onTapLikeUsers(NewsVO tappedNews) {
+        LikeUsersDialog dialog = new LikeUsersDialog(this, tappedNews.getFavorites());
+        dialog.show();
+    }
+
+    @Override
+    public void onTapCommentUsers(NewsVO tappedNews) {
+
+    }
+
+    @Override
+    public void onTapSentToUsers(NewsVO tappedNews) {
 
     }
 

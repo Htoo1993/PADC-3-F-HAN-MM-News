@@ -15,4 +15,10 @@ public interface NewsActionDelegate {
     void onTapSendToButton(NewsVO news);
 
     void onTapFavoriteButton();
+
+    void onTapLikeUsers(NewsVO tappedNews);
+
+    void onTapCommentUsers(NewsVO tappedNews);
+
+    void onTapSentToUsers(NewsVO tappedNews);
 }

@@ -45,5 +45,7 @@
     <dimen name="user_profile_view_pod_height">220dp</dimen>
     <dimen name="before_login_view_pod_height">220dp</dimen>
 
+    <dimen name="app_icon_size">60dp</dimen>
+
 
 </resources>
