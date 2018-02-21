@@ -32,6 +32,8 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.Date;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -47,6 +49,7 @@ import xyz.htooaungnaing.news.delegates.NewsActionDelegate;
 import xyz.htooaungnaing.news.dialogs.AddCommentDialog;
 import xyz.htooaungnaing.news.dialogs.LikeUsersDialog;
 import xyz.htooaungnaing.news.events.LoadedNewsEvent;
+import xyz.htooaungnaing.news.services.SampleService;
 import xyz.htooaungnaing.news.viewpods.AccountControlViewPod;
 import xyz.htooaungnaing.news.viewpods.BeforeLoginUserViewPod;
 import xyz.htooaungnaing.news.viewpods.EmptyViewPod;
@@ -197,7 +200,10 @@ public class MainActivity extends BaseActivity implements NewsActionDelegate, Be
 
     @OnClick(R.id.fab)
     public void onTapFab(View view) {
-        showConfirmDialog();
+        startServiceComponent();
+
+        /*showConfirmDialog();*/
+
         /*String numberToCall = "+959793743887";
         callToNumber(numberToCall);*/
 
@@ -336,5 +342,11 @@ public class MainActivity extends BaseActivity implements NewsActionDelegate, Be
     public void onTapLoginuser() {
         Intent intent = UserProfileActivity.newIntent(getApplicationContext());
         startActivity(intent);
+    }
+
+    private void startServiceComponent(){
+        Intent intent = SampleService.newIntent(getApplicationContext(),
+                new Date().toString());
+        startService(intent);
     }
 }

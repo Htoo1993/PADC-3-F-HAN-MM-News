@@ -42,4 +42,10 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
 
     implementation 'net.aungpyaephyo:mmtextview:1.1'
+
+    compile 'com.google.firebase:firebase-core:11.8.0'
+
+    compile 'com.google.android.gms:play-services-auth:11.8.0'
 }
+
+apply plugin: 'com.google.gms.google-services'

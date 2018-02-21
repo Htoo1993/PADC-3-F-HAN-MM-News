@@ -79,12 +79,16 @@ public class LoginFragment extends Fragment {
 
         LoginUserModel.getsObjInstance(getContext()).loginUser(getContext(), emailOrPhone, password);
 
-
     }
 
     @OnClick(R.id.btn_to_register)
     public void onTapToRegister(View v){
         mLoginScreenDelegate.onTapToRegister();
+    }
+
+    @OnClick(R.id.btn_login_with_google)
+    public void onTapLoginWithGoogle(View view){
+        mLoginScreenDelegate.onTapLoginWithGoogle();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
